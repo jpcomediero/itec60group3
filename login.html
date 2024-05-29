@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+	<link rel="icon" href=".\assets\homeworkhub.png" type="image/x-icon">
+    <link rel="stylesheet" href=".\css\auth.css">
+</head>
+<body>
+    <header>
+        <h1>HomeworkHub</h1>
+    </header>
+    <main>
+        <div class="container">
+			<img src=".\assets\homeworkhub.png" alt="Image 1">
+            <h2>Log in</h2>
+            <form action="login.php" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Log in</button>
+				<p id="toggle-message">Don't have an account? <a href="signup.html" id="toggle-link">Sign up</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
