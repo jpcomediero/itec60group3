@@ -36,6 +36,10 @@ header h1 {
     font-size: 1.5rem;
 }
 
+h2 {
+    padding-bottom: 30px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -138,4 +142,102 @@ main h2 {
     main h2 {
         font-size: 1.25rem;
     }
+}
+
+#add-subject, #add-task {
+    background-image: linear-gradient(-60deg, transparent 0%, transparent 40%, #ffffff44 40%, #ffffff44 60%,
+    transparent 60%, transparent 100%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position-x: 150%;
+}
+
+#add-subject:hover , #add-task:hover {
+    background-position-x: -150%;
+    transition: background-position-x 1000ms;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#form-container {
+    width: 30%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 2%;
+}
+
+#form-container h2 {
+    color: white;
+}
+
+#subjects-container {
+    width: 65%;
+    padding: 20px;
+}
+
+#subject-form,
+#task-form {
+    margin-bottom: 20px;
+}
+
+#subject-form input,
+#task-form input,
+#task-form select {
+    width: calc(100% - 22px);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+#subject-form button,
+#task-form button {
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#subject-form button:hover,
+#task-form button:hover {
+    background-color: #ff6f00;
+}
+
+.subject {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.subject h3, .subj {
+    color: white;
+}
+
+.subject .tasks {
+    margin-top: 10px;
+}
+
+.subject .tasks .task {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.subject .tasks .task.completed {
+    text-decoration: line-through;
+    color: #888;
 }

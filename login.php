@@ -6,6 +6,7 @@
     <title>Log in</title>
 	<link rel="icon" href=".\assets\homeworkhub.png" type="image/x-icon">
     <link rel="stylesheet" href=".\css\auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,10 +16,10 @@
         <div class="container">
 			<img src=".\assets\homeworkhub.png" alt="Image 1">
             <h2>Log in</h2>
-            <form action="login.php" method="post">
+            <form action="login-process.php" method="post">
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>

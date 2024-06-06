@@ -1,17 +1,26 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
+    <link rel="icon" href=".\assets\homeworkhub.png" type="image/x-icon">
     <link rel="stylesheet" href=".\css\signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <div class="container">
             <div class="signup-form">
                 <h2>Sign up</h2>
-                <form action="signup.php" method="post">
+                <form action="signup-process.php" method="post">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -36,7 +45,13 @@
                         <label for="year">Year:</label>
                         <input type="text" id="year" name="year" required>
                     </div>
+                    <div class="form-group">
+                        <label for="section">Section:</label>
+                        <input type="text" id="section" name="section" required>
+                    </div>
                     <button type="submit">Sign up</button>
+                    <br>
+                    <br>
                 </form>
             </div>
             <div class="signup-image">
@@ -46,5 +61,6 @@
             </div>
         </div>
     </main>
+    <script src=".\js\signup.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -71,11 +75,17 @@ main {
     width: 300px; 
     margin: 20px;
     position: relative;
+    cursor: pointer;
+    transition: scale 0.25s ease-in, opacity 0.25s ease-in, filter .25s ease-in;
+    &:hover {
+        scale: 1.2
+    }
 }
 
 .image img {
     width: 70%;
     border-radius: 8px;
+    box-shadow: 5px 5px 8px black;
 }
 
 .image-description {
@@ -83,11 +93,18 @@ main {
     padding: 7px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    margin-top: 10px; 
+    margin-top: 10px;
+    box-shadow: 5px 5px 8px black; 
 }
 
 .image-description p {
     color: #fff;
+}
+
+.image-container:has(.image:hover) .image-container:not(:hover) {
+    scale: 0.8;
+    opacity: 0.8;
+    filter: blur(4px);
 }
 
 main .btn {
@@ -101,10 +118,17 @@ main .btn {
     text-decoration: none;
     display: inline-block;
     margin-top: 1rem;
+    background-image: linear-gradient(-60deg, transparent 0%, transparent 40%, #ffffff44 40%, #ffffff44 60%,
+    transparent 60%, transparent 100%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position-x: 150%;
 }
 
 main .btn:hover {
     background-color: #ff6f00;
+    background-position-x: -150%;
+    transition: background-position-x 1000ms;
 }
 
 footer {
@@ -120,7 +144,7 @@ footer p {
     margin: 0.5rem 0;
 }
 
-footer a {
+footer a, footer h1 {
     color: #ff8c00;
     text-decoration: none;
 }
@@ -147,4 +171,122 @@ footer a:hover {
     main h2 {
         font-size: 1.25rem;
     }
+}
+
+
+
+
+.card {
+    width: 300px;
+    aspect-ratio: 1 / 0.7;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.card .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5 ease-in-out;
+    object-position: 50% 90%;
+    border-radius: inherit;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.card:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.content {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content h2,
+.content p {
+    opacity: 0;
+    transition: 0.4s 0.2s ease;
+}
+
+.content h2 {
+    margin-bottom: 12px;
+    scale: 0.7;
+}
+.content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d1d1d1;
+    transform: translateY(50%);
+}
+
+.card:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.card:hover .content h2 {
+    scale: 1;
+    opacity: 1;;
+}
+
+.card:hover .content P {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 3vh;
+}
+
+
+#trusted-by {
+    padding-top: 50px;
+    font-size: 20px;
+}
+.brand-list {
+    overflow: hidden;
+}
+.wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 15rem;
+    justify-items: stretch;
+}
+@keyframes scroll {
+    to {
+        translate: calc(-6 * 15rem);
+    }
+}
+.wrapper {
+    animation: scroll 20s linear infinite;
+}
+#sponsor {
+    width: 75%;
+    height: 60%;
+    padding: 10px;
 }
