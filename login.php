@@ -26,7 +26,7 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">Log in</button>
-				<p id="toggle-message">Don't have an account? <a href="signup.html" id="toggle-link">Sign up</a></p>
+				<p id="toggle-message">Don't have an account? <a href="signup.php" id="toggle-link">Sign up</a></p>
             </form>
         </div>
     </main>

@@ -11,11 +11,16 @@
     <header>
         <h1>HomeworkHub</h1>
         <nav>
-            <ul>
-                <li><a href=".\index.html">Home</a></li>
-                <li><a href=".\tasks.html">Tasks</a></li>
-                <li><a href=".\profile.php">Profile</a></li>
-                <li><a href="logout.php">Logout</a></li>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tasks.php">Tasks</a></li>
+                <li><a href="devs.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="profile.php" class="dropbtn">Profile</a>
+                    <div class="dropdown-content">
+                        <a href="logout.php">Log out</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -65,58 +70,11 @@
                 <img id="sponsor" src=".\assets\sponsor6.png" alt="">
             </div>
         </div>
-
-        <br>
-        <br>
-
-        <h1 id="devs">The Dev Team</h1>
-            <div class="image-container2">
-                <div class="card">
-                    <div class="image-box">
-                        <img src=".\assets\dev1.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>John Paul Comediero</h2>
-                        <p>Description...</p>
-                    </div>
-                </div>
-    
-                <div class="card">
-                    <div class="image-box">
-                        <img src=".\assets\dev2.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>Mark Anthony Correche</h2>
-                        <p>Description...</p>
-                    </div>
-                </div>
-    
-                <div class="card">
-                    <div class="image-box">
-                        <img src=".\assets\dev3.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>Adriane Lagazo</h2>
-                        <p>Description...</p>
-                    </div>
-                </div>
-    
-                <div class="card">
-                    <div class="image-box">
-                        <img src=".\assets\dev4.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>Ace John Rotario</h2>
-                        <p>Description...</p>
-                    </div>
-                </div>
-            </div>
-
     </main>
     <footer>
         <h1 class="h1-footer">HomeworkHub</h1>
         <p>&copy; 2024 HomeworkHub. All rights reserved.</p>
-        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="devs.html">About Us</a>
     </footer>
 </body>
 </html>

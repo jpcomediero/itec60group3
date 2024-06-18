@@ -40,22 +40,62 @@ header h1 {
     font-size: 1.5rem;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.navbar {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-nav a {
-    color: #ff8c00;
+.navbar li {
+    float: left;
+}
+
+.navbar li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.navbar li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff8c00;
 }
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 13px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: red;
+    color: white;
+}
+
 
 main {
     margin-top: 80px;

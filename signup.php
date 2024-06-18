@@ -57,7 +57,7 @@ session_start();
             <div class="signup-image">
                 <img src=".\assets\homeworkhub.png" alt="Website Image">
 				<h1>HomeworkHub</h1>
-				<p>Already have an account? <a href="login.html">Log in</a></p>
+				<p>Already have an account? <a href="login.php">Log in</a></p>
             </div>
         </div>
     </main>

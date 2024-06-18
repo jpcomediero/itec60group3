@@ -1,8 +1,9 @@
 <?php
+
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header('Location: login.html'); // Redirect to login if not logged in
+    header('Location: login.php');
     exit;
 }
 
@@ -13,24 +14,23 @@ $dbname = "homeworkhub";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
+    $status = isset($_POST['status']) ? 1 : 0;
     $user_id = $_SESSION['user']['id'];
-    $subject = $conn->real_escape_string($_POST['subject']);
-    $task = $conn->real_escape_string($_POST['task']);
-    $deadline = $conn->real_escape_string($_POST['deadline']);
 
-    // Insert task into database
-    $sql = "INSERT INTO tasks (user_id, subject, task, deadline) VALUES (?, ?, ?, ?)";
+    // Update task status in database
+    $sql = "UPDATE tasks SET status = ? WHERE id = ? AND user_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isss", $user_id, $subject, $task, $deadline);
+    $stmt->bind_param("iii", $status, $id, $user_id);
 
     if ($stmt->execute() === TRUE) {
-        echo "New task added successfully";
+        echo "Task status updated successfully";
     } else {
         echo "Error: " . $stmt->error;
     }
